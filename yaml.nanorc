@@ -1,21 +1,41 @@
-syntax "yaml" "\.ya?ml$"
-comment "#"
-header "^---" "%YAML"
+# Supports `YAML` files
+syntax "YAML" "\.ya?ml$"
+header "^(---|===)" "%YAML"
 
-# Values
-color green "(:|^|\s)+\S+"
+## Arrays
+color red "\[" "\]" ":\s+[|>]" "^\s*- "
 
-# Keys
-color red "(^|\s+).*+\s*:(\s|$)"
+### Keys
+color magenta "\s*[\$A-Za-z0-9_-]+\:"
+#color magenta "^\s*[\$A-Za-z0-9_-]+\:"
+color brightmagenta "^\s*@[\$A-Za-z0-9_-]+\:"
 
-# Special values
-color yellow "[:-]\s+(true|false|null)\s*$"
-color yellow "[:-]\s+[0-9]+\.?[0-9]*(\s*($|#))"
-color yellow "(^| )!!(binary|bool|float|int|map|null|omap|seq|set|str) "
+## Values
+color white ":\s.+$"
+## Booleans
+color brightcyan " (y|yes|n|no|true|false|on|off)$"
+## Numbers
+color brightred " [[:digit:]]+(\.[[:digit:]]+)?"
+# Reserved
+color green "(^| )!!(binary|bool|float|int|map|null|omap|seq|set|str) "
 
-# Separator
-color brightwhite "^\s+-"
-color brightwhite ":(\s|\t|$)"
+## Comments
+color brightwhite "#.*$"
 
-# Comments
-color white "(^|[[:space:]])#.*$"
+## Errors
+color ,red ":\w.+$"
+color ,red ":'.+$"
+color ,red ":".+$"
+color ,red "\s+$"
+
+## Non closed quote
+color ,red "['\"][^['\"]]*$"
+
+## Closed quotes
+color yellow "['\"].*['\"]"
+
+## Equal sign
+color brightgreen ":( |$)"
+
+## Brackets
+color brightgreen "\{\{.*\}\}"
