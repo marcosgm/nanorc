@@ -13,19 +13,19 @@ These should be placed inside of the ``~/.nano/`` directory.
 Or for system-wide installation ``/usr/share/nano-syntax-highlighting/``.
 In other words::
 
-    git clone git@github.com:scopatz/nanorc.git ~/.nano
+    git clone git@github.com:marcosgm/nanorc.git ~/.nano
 
 *Note - if you have any issues (ssh was not properly configured), alternatively use::
 
-    git clone https://github.com/scopatz/nanorc.git ~/.nano
+    git clone https://github.com/marcosgm/nanorc.git ~/.nano
     
 *System wide will look like so*::
 
-    sudo git clone https://github.com/scopatz/nanorc.git /usr/share/nano-syntax-highlighting/
+    sudo git clone https://github.com/marcosgm/nanorc.git /usr/share/nano-syntax-highlighting/
 
 **NOTE**: \< and \> are regular character escapes on macOS. The bug's fixed in Nano, but this might be a problem
 if you are using an older version. If this is the case, replace them respectively with [[:<:]] and [[:>:]].
-This is reported in `issue 52 <https://github.com/scopatz/nanorc/issues/52>`_
+This is reported in `issue 52 <https://github.com/marcosgm/nanorc/issues/52>`_
 
 2. Configure ``nano``
 ~~~~~~~~~
@@ -54,11 +54,11 @@ where ``$install_path`` is ``/usr/share/nano-syntax-highlighting`` or ``~/.nano/
 ~~~~~~~~~~~~~~~~~~~~~~
 Finally, you can run an automatic installer using the following code::
 
-    $ curl https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | sh
+    $ curl https://raw.githubusercontent.com/marcosgm/nanorc/master/install.sh | sh
 
 or alternatively::
 
-    $ wget https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh -O- | sh
+    $ wget https://raw.githubusercontent.com/marcosgm/nanorc/master/install.sh -O- | sh
 
 *Note -
     some syntax definitions which exist in Nano upstream may be preferable to the ones provided by this package.
